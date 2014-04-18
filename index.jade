@@ -1,11 +1,4 @@
-!!! 5
-//if lt IE 7
-html.no-js.lt-ie9.lt-ie8.lt-ie7
-//if IE 7
-html.no-js.lt-ie9.lt-ie8
-//if IE 8
-html.no-js.lt-ie9
-//if gt IE 8
+doctype 5
 html.no-js
   head
     meta(charset="utf-8")
@@ -14,11 +7,42 @@ html.no-js
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width")
     link(rel="stylesheet", href="/css/bootstrap.min.css")
-    link(rel="stylesheet", href="/css/bootstrap-responsive.min.css")
     link(rel="stylesheet", href="/css/main.css")
-    script(src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js")
   body
+    .container
+      .col-md-6.max
+        //Event panel
+        .panel.panel-default
+          .panel-heading: h3 events
+          ul.list-group
+            li.list-group-item lorem
+            li.list-group-item ipsum
 
+      .col-md-6.max
+        .row
+          .col-md-12
+            //News panel
+            .panel.panel-default
+              .panel-heading: h3 News
+              ul.list-group
+                li.list-group-item lorem
+                li.list-group-item ipsum
+
+        .row
+          //Twitter panel
+          .col-md-6
+            .panel.panel-default
+              .panel-heading: h3 Twitter
+              ul.list-group
+                li.list-group-item lorem
+                li.list-group-item ipsum
+          //Facebook panel          
+          .col-md-6
+            .panel.panel-default
+              .panel-heading: h3 Facebook
+              ul.list-group
+                li.list-group-item lorem
+                li.list-group-item ipsum
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-    script(src="/js/vendor/bootstrap.min.js")
+    script(src="/js/bootstrap.min.js")
     script(src="/js/main.js")
