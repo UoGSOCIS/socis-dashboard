@@ -13,7 +13,7 @@ html.no-js
     #dash.container
       .col-md-6.max
         //Event panel
-        .panel.panel-default
+        #events.panel.panel-default
           .panel-heading: h3 Events
           ul.list-group
             li.list-group-item lorem
@@ -53,8 +53,8 @@ html.no-js
         button(id="authorize-button").btn.btn-primary.btn-lg Auth
     #results
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-    script(src="/js/bootstrap.min.js")
-    script(src="js/underscore.js")
-    script(src="/js/backbone.js")
-    script(src="/js/main.js")
-    script(src="https://apis.google.com/js/client.js?onload=load")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js")
+    script(src="https://apis.google.com/js/client.js")
+    script(src="/js/gcal-feed.js")
