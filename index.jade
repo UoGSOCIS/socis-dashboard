@@ -10,7 +10,7 @@ html.no-js
     link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Lato:400,700,900")
     link(rel="stylesheet", href="/css/main.css")
   body
-    .container
+    #dash.container
       .col-md-6.max
         //Event panel
         .panel.panel-default
@@ -44,6 +44,15 @@ html.no-js
               ul.list-group
                 li.list-group-item lorem
                 li.list-group-item ipsum
+    
+    #auth.container(style="padding-top: 100px")
+        .alert.alert-danger
+          p
+            strong Not authenticated!
+            | Please sign in to Google to get event feed
+        button(id="authorize-button").btn.btn-primary.btn-lg Auth
+    #results
     script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
     script(src="/js/bootstrap.min.js")
     script(src="/js/main.js")
+    script(src="https://apis.google.com/js/client.js?onload=load")
