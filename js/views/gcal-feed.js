@@ -1,20 +1,15 @@
-(function ($, Backbone) {
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'gapi',
+  'collections/events'
+], function ($, _, Backbone, gapi, Events) {
   var clientID = '893172756640-ouu4h990t4vsq0mvuevv5grcs9bge18b.apps.googleusercontent.com'
   var apiKey = 'AIzaSyBwD1kBCk6ktJrmuogShXJlFM7ZQ4T-bs0'
   var scopes = 'https://www.googleapis.com/auth/calendar.readonly'
 
-  var Events = Backbone.Collection.extend({
-    url: function() {
-      return 'https://www.googleapis.com/calendar/v3/calendars/' + calID +'/events?maxResults=4&singleEvents=true&key=' + apiKey
-    },
-    parse: function(resp, xhr) {
-      console.log(resp)
-      return resp.items
-    },
-    calID: 'socis.ca_h8qcn7cgvfvpqgii9jkilb00r8%40group.calendar.google.com'
-  })
-
-  EventView = Backbone.View.extend({
+  var EventView = Backbone.View.extend({
     el: $("#events"),
     initialize: function () {
       gapi.client.setApiKey(apiKey)
@@ -52,5 +47,7 @@
       gapi.auth.authorize({client_id: clientID, scope: scopes, immediate: false}, handleAuthResult);
       return false;
     }
-  })
-}) (jQuery);
+  });
+
+  return EventView;
+});
