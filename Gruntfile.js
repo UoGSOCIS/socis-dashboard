@@ -20,8 +20,6 @@ module.exports = function (grunt) {
             },
             js: {
                 src: [
-                    'web/js/libs/jquery.min.js',
-                    'web/js/libs/bootstrap.js',
                     'web/js/views/*.js',
                     'web/js/*.js',
                 ],
@@ -32,13 +30,14 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     {expand: true, cwd: 'web/', src: ['fonts/*'], dest: 'dist/', filter: 'isFile'},
+                    {expand: true, cwd: 'web/', src: ['js/libs/*'], dest: 'dist/', filter: 'isFile'},
                     {expand: true, cwd: 'web/', src: ['img/*'], dest: 'dist/', filter: 'isFile'},
                     {expand: true, cwd: 'web/', src: 'index.html', dest: 'dist/', expand: true},
                 ],
             },
         },
         watch: {
-            files: ['web/css/*', 'web/js/libs/*.js', 'web/js/views/*.js', 'web/js/*.js'],
+            files: ['web/css/*', 'web/js/libs/*', 'web/js/views/*', 'web/js/*', 'web/index.html'],
             tasks: ['less', 'concat', 'copy']
         }
     });

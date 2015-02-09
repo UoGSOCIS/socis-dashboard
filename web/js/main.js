@@ -1,0 +1,1 @@
+var fbEventsView = new FacebookEventView();
