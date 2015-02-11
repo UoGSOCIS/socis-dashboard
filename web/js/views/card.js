@@ -4,8 +4,7 @@ boneboiler.views.card = Backbone.View.extend({
    template: _.template($('#cardTPL').html()),
    initialize: function(options) {
         $.extend(this, options);
-        console.log(this);
-        this.className += ' col-md-' + (this.width || 2);
+        this.className += ' col-md-' + (this.width || 4);
         this.render();
    },
    render: function() {

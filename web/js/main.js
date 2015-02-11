@@ -1,9 +1,8 @@
 new boneboiler.views.card({
-    width: 4,
+    width: 6,
     title: 'Twitter',
 });
 
 new boneboiler.views.card({
-    width: 2,
     title: 'Facebook',
 });
