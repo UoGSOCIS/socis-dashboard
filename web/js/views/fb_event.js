@@ -1,25 +1,31 @@
 var FacebookEvent = Backbone.Model.extend({
+    sync: function(method, model, options) {
+        var _this = this;
 
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'unknown') {        
+                FB.login({scope: 'user_groups'});
+            }
+
+            FB.api('/' + boneboiler.config.fbGroupId + '/feed?fields', 'get', function(resp) {
+                console.log(resp)
+            })
+        });
+    },
 });
 
 var FacebookEventView = Backbone.View.extend({
     el: 'fbEvents',
     template: _.template($('#FBEventsTPL').html()),
     initialize: function() {
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '801617349917144',
-                xfbml      : true,
-                version    : 'v2.1'
-            });
-        };
+        var _this = this;
 
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+        this.model = new FacebookEvent();
+        setTimeout(function() {
+            _this.model.fetch();
+            // setInterval(function() {
+            //     _this.model.fetch();
+            // }, 200);
+        }, 1000);
     }
 })
