@@ -12,12 +12,6 @@ module.exports = function (grunt) {
             }
         },
         concat: {
-            css: {
-                src: [
-                    'web/css/*.css',
-                ],
-                dest: 'dist/css/style.css'
-            },
             js: {
                 src: [
                     'web/js/views/*.js',
@@ -30,6 +24,7 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     {expand: true, cwd: 'web/', src: ['fonts/*'], dest: 'dist/', filter: 'isFile'},
+                    {expand: true, cwd: 'web/', src: ['css/*.css'], dest: 'dist/', filter: 'isFile'},
                     {expand: true, cwd: 'web/', src: ['js/libs/*'], dest: 'dist/', filter: 'isFile'},
                     {expand: true, cwd: 'web/', src: ['img/*'], dest: 'dist/', filter: 'isFile'},
                     {expand: true, cwd: 'web/', src: 'index.html', dest: 'dist/', expand: true},
@@ -45,5 +40,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['less', 'concat:css', 'concat:js', 'copy']);
+    grunt.registerTask('default', ['less', 'concat:js', 'copy']);
 };
