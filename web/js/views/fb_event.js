@@ -1,4 +1,4 @@
-var FacebookEvent = Backbone.Model.extend({
+boneboiler.models.FacebookEvent = Backbone.Model.extend({
     sync: function(method, model, options) {
         var _this = this;
 
@@ -14,18 +14,14 @@ var FacebookEvent = Backbone.Model.extend({
     },
 });
 
-var FacebookEventView = Backbone.View.extend({
-    el: 'fbEvents',
+boneboiler.views.FacebookEventView = Backbone.View.extend({
+    el: '.panel-body',
     template: _.template($('#FBEventsTPL').html()),
     initialize: function() {
         var _this = this;
-
-        this.model = new FacebookEvent();
-        setTimeout(function() {
-            _this.model.fetch();
-            // setInterval(function() {
-            //     _this.model.fetch();
-            // }, 200);
-        }, 1000);
+        this.model = new boneboiler.models.FacebookEvent();
+    },
+    update: function() {
+        this.model.fetch();
     }
 })

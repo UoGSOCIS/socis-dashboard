@@ -5,4 +5,5 @@ new boneboiler.views.card({
 
 new boneboiler.views.card({
     title: 'Facebook',
+    child: new boneboiler.views.FacebookEventView(),
 });
