@@ -33,9 +33,16 @@
     <script id="FBEventsTPL" type="text/template">
       <ul class="list-unstyled">
         <% _.each(events, function(el) { %>
+          <% var start = new Date(el.start_time), end = (el.end_time ? new Date(el.end_time) : null); %>
           <% console.log(el) %>
-            <li>
+            <li class="fb-event-item">
+              <span class="pull-right">
+                <p class="text-center text-muted"><strong><%= start.format("mmmm") %></strong><br><%= start.format("d") %></p>
+              </span>
               <h3><%= el.name %></h3>
+              <p class="text-muted">
+                <%= el.location %> @ <%= start.format("h:MM TT") %><%= (end ? ' - ' + end.format("h:MM TT") : '') %> 
+              </p>
             </li>
         <% }) %>
       </ul>

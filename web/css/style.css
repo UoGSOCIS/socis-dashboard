@@ -5,8 +5,14 @@ body {
 .panel .panel-body {
   min-height: 200px;
 }
-.panel .panel-body li {
+.panel .panel-body .fb-event-item {
+  margin: 10px 0;
+}
+.panel .panel-body .fb-event-item:not(:last-child) {
   border-bottom: 1px solid #dddddd;
+}
+.panel .panel-body .pull-right strong {
+  font-size: 16px;
 }
 .panel .panel-body h3 {
   margin-top: 10px;

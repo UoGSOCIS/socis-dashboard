@@ -24,7 +24,7 @@ boneboiler.models.FacebookEvents = Backbone.Model.extend({
 boneboiler.views.FacebookEventView = Backbone.View.extend({
     initialize: function() {
         var _this = this;
-        console.log(this.el)
+
         this.model = new boneboiler.models.FacebookEvents();
         this.listenTo(this.model, 'change', this.render);
     },
