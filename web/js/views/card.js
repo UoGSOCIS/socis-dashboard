@@ -12,6 +12,7 @@ boneboiler.views.card = Backbone.View.extend({
 
         if (this.child) {        
             console.log(this, this.child)
+            this.child.update();
             setInterval(function() {
                 // _this.child.update()
             }, this.interval);

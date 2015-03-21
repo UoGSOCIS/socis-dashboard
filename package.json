@@ -9,7 +9,7 @@
     "zerver": "0.15.x"
   },
   "scripts": {
-    "start": "zerver -rVM index.html --port=3030 dist",
+    "start": "zerver -rVM index.html --port=3030 web",
     "watch": "grunt watch"
   },
   "devDependencies": {
