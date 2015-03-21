@@ -32,13 +32,13 @@ module.exports = function (grunt) {
             },
         },
         watch: {
-            files: ['web/css/*', 'web/js/libs/*', 'web/js/views/*', 'web/js/*', 'web/index.html'],
-            tasks: ['less', 'concat', 'copy']
+            files: ['web/css/*'],
+            tasks: ['less']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['less', 'concat:js', 'copy']);
+    grunt.registerTask('default', ['less']);
 };

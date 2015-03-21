@@ -15,21 +15,29 @@ boneboiler.models.FacebookEvents = Backbone.Model.extend({
                     });
                     return el;
                 });
-                _this.set(firstThree);
+                _this.set({ 'events': firstThree });
             });
         });
     },
 });
 
 boneboiler.views.FacebookEventView = Backbone.View.extend({
-    el: '.panel-body',
-    template: _.template($('#FBEventsTPL').html()),
     initialize: function() {
         var _this = this;
+        console.log(this.el)
         this.model = new boneboiler.models.FacebookEvents();
+        this.listenTo(this.model, 'change', this.render);
+    },
+    render: function() {
+        var _this = this;
+
+        this.$el.html(
+            _.template($('#FBEventsTPL').html())({
+                'events': _this.model.get('events')
+            })
+        );
     },
     update: function() {
         this.model.fetch();
-        console.log(this.model);
     }
 })

@@ -26,16 +26,19 @@
           <h3 class="panel-title"><%= title %></h3>
         </div>
         <div class="panel-body">
-          <div class="loader">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-          </div>
         </div>
       </div>
     </script>
 
     <script id="FBEventsTPL" type="text/template">
-
+      <ul class="list-unstyled">
+        <% _.each(events, function(el) { %>
+          <% console.log(el) %>
+            <li>
+              <h3><%= el.name %></h3>
+            </li>
+        <% }) %>
+      </ul>
     </script>
 
     <script src="https://connect.facebook.net/en_US/sdk.js"></script>

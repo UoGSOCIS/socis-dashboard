@@ -1,9 +1,9 @@
 new boneboiler.views.card({
-    width: 6,
     title: 'Twitter',
 });
 
 new boneboiler.views.card({
+    width: 6,
     title: 'Facebook',
-    child: new boneboiler.views.FacebookEventView(),
+    child: boneboiler.views.FacebookEventView,
 });

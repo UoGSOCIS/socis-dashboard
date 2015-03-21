@@ -10,8 +10,9 @@ boneboiler.views.card = Backbone.View.extend({
         this.interval = this.interval || 200;
         this.render();
 
-        if (this.child) {        
-            console.log(this, this.child)
+        if (this.child) {   
+            this.child = new this.child({ el: this.$el.find('.panel-body') });    
+
             this.child.update();
             setInterval(function() {
                 // _this.child.update()
@@ -24,6 +25,5 @@ boneboiler.views.card = Backbone.View.extend({
         }));
         this.$el.attr('class', this.className);
         $('#dashboard').append(this.el);
-        if (this.child) this.child.render();
    },
 });
