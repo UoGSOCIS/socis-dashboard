@@ -9,13 +9,13 @@ boneboiler.models.FacebookEvents = Backbone.Model.extend({
 
             //{ 'since': Date.now() } for prod
             FB.api('/' + boneboiler.config.fbGroupId + '/events', 'get', function(resp) {
-                var firstThree = _.map(resp.data.slice(0,3), function(el) {
+                var expandedEvents = _.map(resp.data, function(el) {
                     FB.api('/' + el.id, 'get', function(response) {
                         _.extend(el, response);
                     });
                     return el;
                 });
-                _this.set({ 'events': firstThree });
+                _this.set({ 'events': expandedEvents });
             });
         });
     },

@@ -5,13 +5,17 @@ body {
 /* CARD */
 .panel {
     .panel-body {
-        min-height: 200px;
-    
-        .fb-event-item {
+        height: 260px;
+        max-height: 260px;
+        overflow: scroll;
+
+        .fb-event-item,
+        .fb-post-item {
             margin: 10px 0;
         }
 
-        .fb-event-item:not(:last-child) {
+        .fb-event-item:not(:last-child),
+        .fb-post-item:not(:last-child) {
             border-bottom: 1px solid #DDD
         }
     
@@ -21,6 +25,10 @@ body {
 
         h3 {
             margin-top: 10px;
+        }
+
+        .post-text {
+            font-size: 16px;
         }
     }
 }

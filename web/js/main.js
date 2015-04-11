@@ -3,9 +3,13 @@ new boneboiler.views.card({
 });
 
 new boneboiler.views.card({
-    width: 6,
-    title: 'Facebook',
+    title: 'Facebook Events',
     child: boneboiler.views.FacebookEventView,
+});
+
+new boneboiler.views.card({
+    title: 'Facebook Posts',
+    child: boneboiler.views.FacebookPostView,
 });
 
  /*

@@ -34,7 +34,6 @@
       <ul class="list-unstyled">
         <% _.each(events, function(el) { %>
           <% var start = new Date(el.start_time), end = (el.end_time ? new Date(el.end_time) : null); %>
-          <% console.log(el) %>
             <li class="fb-event-item">
               <span class="pull-right">
                 <p class="text-center text-muted"><strong><%= start.format("mmmm") %></strong><br><%= start.format("d") %></p>
@@ -44,6 +43,22 @@
                 <%= el.location %> @ <%= start.format("h:MM TT") %><%= (end ? ' - ' + end.format("h:MM TT") : '') %> 
               </p>
             </li>
+        <% }) %>
+      </ul>
+    </script>
+
+    <script id="FBPostsTPL" type="text/template">
+      <ul class="list-unstyled">
+        <% _.each(posts, function(el) { %>
+          <% 
+            var trimmed = el.message.substring(0, 100),
+                posted = new Date(el.created_time);
+            console.log(el) 
+          %>          
+          <li class="fb-post-item">
+            <p class="post-text"><%= (trimmed.substring(0, Math.min(trimmed.length, trimmed.lastIndexOf(" "))) + '...') %></p>
+            <p class="text-muted"><%= el.from.name %> - <%= posted.format("m/d/yy h:MM TT") %></p>
+          </li>
         <% }) %>
       </ul>
     </script>
@@ -73,6 +88,7 @@
 
     <script src="js/views/card.js"></script>
     <script src="js/views/fb_event.js"></script>
+    <script src="js/views/fb_post.js"></script>
 
     <script src="js/main.js"></script>
   </body>

@@ -32,7 +32,7 @@ module.exports = function (grunt) {
             },
         },
         watch: {
-            files: ['web/css/*'],
+            files: ['web/css/*.less'],
             tasks: ['less']
         }
     });

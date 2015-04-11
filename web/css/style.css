@@ -3,12 +3,16 @@ body {
 }
 /* CARD */
 .panel .panel-body {
-  min-height: 200px;
+  height: 260px;
+  max-height: 260px;
+  overflow: scroll;
 }
-.panel .panel-body .fb-event-item {
+.panel .panel-body .fb-event-item,
+.panel .panel-body .fb-post-item {
   margin: 10px 0;
 }
-.panel .panel-body .fb-event-item:not(:last-child) {
+.panel .panel-body .fb-event-item:not(:last-child),
+.panel .panel-body .fb-post-item:not(:last-child) {
   border-bottom: 1px solid #dddddd;
 }
 .panel .panel-body .pull-right strong {
@@ -16,4 +20,7 @@ body {
 }
 .panel .panel-body h3 {
   margin-top: 10px;
+}
+.panel .panel-body .post-text {
+  font-size: 16px;
 }
