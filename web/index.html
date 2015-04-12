@@ -53,7 +53,6 @@
           <% 
             var trimmed = el.message.substring(0, 100),
                 posted = new Date(el.created_time);
-            console.log(el) 
           %>          
           <li class="fb-post-item">
             <p class="post-text"><%= (trimmed.substring(0, Math.min(trimmed.length, trimmed.lastIndexOf(" "))) + '...') %></p>
