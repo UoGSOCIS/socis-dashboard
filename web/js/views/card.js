@@ -7,7 +7,8 @@ boneboiler.views.card = Backbone.View.extend({
         $.extend(this, options);
 
         this.className += ' col-md-' + (this.width || 4);
-        this.interval = this.interval || 200;
+        // Default update interal of 2 minutes
+        this.interval = this.interval || 120000;
         this.render();
 
         if (this.child) {   
@@ -15,7 +16,7 @@ boneboiler.views.card = Backbone.View.extend({
 
             this.child.update();
             setInterval(function() {
-                // _this.child.update()
+                _this.child.update()
             }, this.interval);
         }
    },
