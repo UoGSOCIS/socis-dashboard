@@ -1,3 +1,4 @@
+// Main card interface
 boneboiler.views.card = Backbone.View.extend({
    tagName: 'div',
    className: 'card',
@@ -11,9 +12,11 @@ boneboiler.views.card = Backbone.View.extend({
         this.interval = this.interval || 120000;
         this.render();
 
+        // If a inner child view was defined render it in the panel-body and setup its update function
         if (this.child) {   
             this.child = new this.child({ el: this.$el.find('.panel-body') });    
 
+            // Force the first update of the child view and set an interval that updates the child every n milliseconds
             this.child.update();
             setInterval(function() {
                 console.log('Updating card')

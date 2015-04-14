@@ -1,7 +1,9 @@
+// Adding a new basic card
 new boneboiler.views.card({
     title: 'Twitter',
 });
 
+// Adding a new card with an inner view (this child view displays the data)
 new boneboiler.views.card({
     title: 'Facebook Events',
     child: boneboiler.views.FacebookEventView,
