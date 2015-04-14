@@ -14,3 +14,7 @@ npm start
 ```
 grunt less
 ```
+
+#Dependencies
+- [Node.js](https://nodejs.org/)
+- [npm.js](https://www.npmjs.com/)
