@@ -1,0 +1,16 @@
+#Installation
+```
+git clone git@github.com:UoGSOCIS/socis-dashboard.git
+cd socis-dashboard
+npm install
+```
+
+#Running the Dashboard
+```
+npm start
+```
+
+#Compiling the LESS stylesheets
+```
+grunt less
+```
